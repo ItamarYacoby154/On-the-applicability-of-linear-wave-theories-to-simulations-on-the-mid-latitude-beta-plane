@@ -1,0 +1,64 @@
+# Model parameters
+# Continuous equation parameters
+ &PARM01
+# viscAh=5000,
+ viscAh=500,
+ viscAr=1.E-2,
+ diffKhT=1000.,
+ diffKrT=1.E-5,
+# ivdc_kappa=1.,
+# implicitDiffusion=.TRUE.,
+ eosType='LINEAR',
+ tRef=20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20., 20.,  
+ tAlpha=2.E-4,
+ sBeta=0.,
+ f0=1.E-4,
+ beta=1.666666667E-11,
+ gravity=9.81,
+ rhoConst=1000.,
+ rhonil=1000.,
+ rigidLid=.FALSE.,
+ implicitFreeSurface=.TRUE.,
+ no_slip_sides=.FALSE.,
+ no_slip_bottom=.FALSE.,
+ saltStepping=.FALSE.,
+ &
+
+
+# Elliptic solver parameters
+ &PARM02
+ cg2dTargetResidual=1.E-7,
+ cg2dMaxIters=1000,
+ &
+
+# Time stepping parameters
+ &PARM03
+ startTime=0.,
+ endTime=600000.,
+ deltaT=50,
+ pChkptFreq=100000,
+ chkptFreq=100000,
+ dumpFreq=1000,
+
+ monitorSelect=2,
+ monitorFreq=100000.,
+ &
+
+# Gridding parameters
+ &PARM04
+ usingCartesianGrid=.TRUE.,
+ delX=4*50,
+ delY=3600*500,
+ xgOrigin=-100,
+ ygOrigin=-500,
+ delR=200., 200., 100., 100., 100., 100., 50., 50., 50., 5., 5., 5., 5., 5., 5., 5., 5., 5., 5., 5., 5., 5., 5., 5., 5., 5., 5., 5., 5., 50., 50., 50., 100., 100., 100., 100., 200., 200.,   
+ &
+
+# Input datasets
+ &PARM05
+ bathyFile='bathy.bin'
+ zonalWindFile='windx_const.bin',
+ meridWindFile=,
+# pSurfInitFile='eta0.bin',
+ hydrogThetaFile='theta0.bin',
+ &
