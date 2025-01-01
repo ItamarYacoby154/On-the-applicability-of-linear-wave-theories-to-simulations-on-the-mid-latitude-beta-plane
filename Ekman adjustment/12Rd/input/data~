@@ -1,0 +1,57 @@
+# Model parameters
+# Continuous equation parameters
+ &PARM01
+ viscAh=4.E2,
+ f0=1.E-4,
+ beta=1.666666667E-11,
+ rhoConst=1000.,
+ gBaro=0.018,
+ rigidLid=.FALSE.,
+ implicitFreeSurface=.TRUE.,
+ momAdvection=.FALSE.,
+# momViscosity=.FALSE.,
+ no_slip_sides=.FALSE.,
+ no_slip_bottom=.FALSE.,
+ tempStepping=.FALSE.,
+ saltStepping=.FALSE.,
+ &
+
+
+# Elliptic solver parameters
+ &PARM02
+ cg2dTargetResidual=1.E-7,
+ cg2dMaxIters=1000,
+ &
+
+# Time stepping parameters
+ &PARM03
+ momForcingOutAB=1,
+ momDissip_In_AB=.FALSE.,
+ nIter0=0,
+ deltaT=1200,
+ pChkptFreq=864000,
+ chkptFreq=864000,
+ dumpFreq=864000,
+
+ monitorSelect=2,
+ nTimeSteps=777600,
+ monitorFreq=864000.,
+ &
+
+# Gridding parameters
+ &PARM04
+ usingCartesianGrid=.TRUE.,
+ delX=62*60000,
+ delY=62*30000,
+ xgOrigin=-1860000,
+ ygOrigin=-930000,
+ delR=500.,
+ &
+
+# Input datasets
+ &PARM05
+ bathyFile='bathy.bin'
+ zonalWindFile='const.bin',
+ meridWindFile=,
+# pSurfInitFile='eta0.bin',
+ &
